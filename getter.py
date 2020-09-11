@@ -62,9 +62,9 @@ class Researcher(Resource):
     def get(self):
         queries= request.args.getlist('queries')
 
-        getter = Getter('9051')
+        # getter = Getter('9051')
 
-        pubs = getter.get(queries)
+        # pubs = getter.get(queries)
 
         response = {
             'products': ['apples', 'oranges']
