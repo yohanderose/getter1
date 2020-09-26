@@ -62,12 +62,12 @@ class Researcher(Resource):
     def get(self):
         queries= request.args.getlist('queries')
 
-        # getter = Getter('9051')
+        getter = Getter('9051')
 
-        # pubs = getter.get(queries)
+        pubs = getter.get(queries)
 
         response = {
-            'products': ['apples', 'oranges']
+            'publications': pubs
         } 
         return jsonify(response)
 
@@ -76,4 +76,5 @@ api.add_resource(Researcher, '/')
 
 # Run the application
 if __name__ == '__main__':
+    # TODO: Remove on deployment 
     app.run(host='0.0.0.0', port=80, debug=True)
